@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mood Music Player</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>🎵 Mood Music Player</h1>
+    <div id="login">
+      <button id="loginBtn">Login with Spotify</button>
+    </div>
+
+    <div id="moodSection" style="display:none;">
+      <h2>Select your mood</h2>
+      <div class="moods">
+        <button class="mood" data-mood="happy">😊 Happy</button>
+        <button class="mood" data-mood="sad">😔 Sad</button>
+        <button class="mood" data-mood="relaxed">😌 Relaxed</button>
+        <button class="mood" data-mood="energetic">⚡ Energetic</button>
+      </div>
+    </div>
+
+    <div id="playerSection" style="display:none;">
+      <h2 id="playlistTitle"></h2>
+      <iframe id="spotifyPlayer" width="300" height="380" frameborder="0" allow="autoplay; clipboard-write; encrypted-media;" allowfullscreen></iframe>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
