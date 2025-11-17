@@ -2,29 +2,71 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mood Music Player</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div class="background">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+  </div>
+
   <div class="container">
-    <h1>🎵 Mood Music Player</h1>
-    <div id="login">
-      <button id="loginBtn">Login with Spotify</button>
-    </div>
-
-    <div id="moodSection" style="display:none;">
-      <h2>Select your mood</h2>
-      <div class="moods">
-        <button class="mood" data-mood="happy">😊 Happy</button>
-        <button class="mood" data-mood="sad">😔 Sad</button>
-        <button class="mood" data-mood="relaxed">😌 Relaxed</button>
-        <button class="mood" data-mood="energetic">⚡ Energetic</button>
+    <div class="content">
+      <div class="header">
+        <div class="logo-wrapper">
+          <span class="logo">🎵</span>
+        </div>
+        <h1>Mood Music</h1>
+        <p class="tagline">Discover music that matches your vibe</p>
       </div>
-    </div>
 
-    <div id="playerSection" style="display:none;">
-      <h2 id="playlistTitle"></h2>
-      <iframe id="spotifyPlayer" width="300" height="380" frameborder="0" allow="autoplay; clipboard-write; encrypted-media;" allowfullscreen></iframe>
+      <div id="login" class="login-section">
+        <button id="loginBtn" class="btn btn-primary">Connect with Spotify</button>
+        <p class="subtitle">Stream your favorite playlists instantly</p>
+      </div>
+
+      <!-- floating music notes for a playful effect -->
+      <div class="notes" aria-hidden="true">
+        <span class="note" style="--i:0">♪</span>
+        <span class="note" style="--i:1">♫</span>
+        <span class="note" style="--i:2">♬</span>
+        <span class="note" style="--i:3">♪</span>
+      </div>
+
+      <div id="moodSection" class="mood-section" style="display:none;">
+        <h2 class="section-title">How are you feeling?</h2>
+        <p class="section-subtitle">Choose your mood to get personalized playlists</p>
+        <div class="moods-container">
+          <button class="mood-card" data-mood="happy">
+            <span class="mood-icon">😊</span>
+            <span class="mood-name">Happy</span>
+          </button>
+          <button class="mood-card" data-mood="sad">
+            <span class="mood-icon">😔</span>
+            <span class="mood-name">Sad</span>
+          </button>
+          <button class="mood-card" data-mood="relaxed">
+            <span class="mood-icon">😌</span>
+            <span class="mood-name">Relaxed</span>
+          </button>
+          <button class="mood-card" data-mood="energetic">
+            <span class="mood-icon">⚡</span>
+            <span class="mood-name">Energetic</span>
+          </button>
+        </div>
+      </div>
+
+      <div id="playerSection" class="player-section" style="display:none;">
+        <button class="btn-back" id="backBtn">← Back</button>
+        <h2 id="playlistTitle" class="playlist-title"></h2>
+        <div class="player-wrapper">
+          <iframe id="spotifyPlayer" src="" frameborder="0" allow="autoplay; clipboard-write; encrypted-media;" allowfullscreen></iframe>
+        </div>
+      </div>
     </div>
   </div>
 
